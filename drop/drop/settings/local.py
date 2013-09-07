@@ -1,6 +1,7 @@
 """Development settings and globals."""
 
 
+from os import environ
 from os.path import join, normpath
 
 from base import *
@@ -25,13 +26,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': normpath(join(DJANGO_ROOT, 'default.db')),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
+         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+         'NAME': environ.get('DATABASE_NAME'),
+         'USER': environ.get('DATABASE_USER'),
+         'PASSWORD': environ.get('DATABASE_PASSWORD'),
+         'HOST': 'localhost',
+     }
 }
 ########## END DATABASE CONFIGURATION
 

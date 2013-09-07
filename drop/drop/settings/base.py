@@ -184,10 +184,14 @@ DJANGO_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # GeoDjango
+    'django.contrib.gis',
+
     # Useful template tags:
     # 'django.contrib.humanize',
 
     # Admin panel and documentation:
+    'grappelli',
     'django.contrib.admin',
     # 'django.contrib.admindocs',
 )
@@ -199,6 +203,7 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
+    'notes',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
