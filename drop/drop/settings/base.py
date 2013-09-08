@@ -201,6 +201,8 @@ THIRD_PARTY_APPS = (
     'south',
     # Forms
     'floppyforms',
+    # Django extensions
+    'django_extensions',
 )
 
 # Apps specific for this project go here.
