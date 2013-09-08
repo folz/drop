@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<script type="text/javascript" src="{% static 'js/OpenLayers.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/google-v3.js' %}"></script>
+<script src="{% static 'floppyforms/js/MapWidget.js' %}"></script>
+{% if form.is_multipart %}
+  <form enctype="multipart/form-data" method="post" action="{% url 'notes_image' %}">
+{% else %}
+  <form method="post" action="{% url 'notes_image' %}">
+{% endif %}
+  {% csrf_token %}
+  {{ form.as_p }}
+  <p><input type="submit" value="Submit"></p>
+</form>
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
